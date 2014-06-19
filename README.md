@@ -50,7 +50,7 @@ It is not necessary to set these attributes if you create a "AUTO" button.
 
 ### Options
 Please read JSDoc.  
-http://www.usamimi.info/~sutara/sample2/semiResponsive/JSDoc/
+http://www.usamimi.info/~sutara/sample2/semiResponsive/JSDoc/global.html#semiResponsive
 
 ## License
 MIT License
