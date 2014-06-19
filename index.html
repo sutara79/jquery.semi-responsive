@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>jquery.semiResponsive</title>
+		<link rel="stylesheet" type="text/css" href="css/common.css">
+	</head>
+	<body>
+		<header>
+			<h1>jquery.semiResponsive</h1>
+			<time>version: 1.0 (2014-06-19)</time>
+		</header>
+
+		<nav>
+			<a href="javascript:void(0)" class="semi_responsive" sr_link_href="css/pc.css" sr_param_val="pc" sr_min_width="1000">PC</a> /
+			<a href="javascript:void(0)" class="semi_responsive" sr_link_href="css/sp.css" sr_param_val="sp" sr_min_width="0">Smart Phone</a> /
+			<a href="javascript:void(0)" class="semi_responsive">AUTO</a>
+		</nav>
+
+		<div id="contents">
+			<div id="main">
+				<article>
+					<h2>article</h2>
+<pre>
+&lt;script src="js/jquery.semiResponsive.1.0.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+	$('nav').semiResponsive();
+&lt;/script&gt;
+</pre>
+					<img src="img/img1.jpg">
+				</article>
+			</div>
+			<div id="sub">
+				<aside>
+					<h3>aside</h3>
+					<ul>
+						<li>GitHub</li>
+						<li><a href="JSDoc">JSDoc</a></li>
+					</ul>
+				</aside>
+			</div>
+		</div>
+
+		<footer>
+			<address>Yuusaku Miyazaki [toumin.m7@gmail.com]
+		</footer>
+
+		<!-- JavaScript -->
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="js/jquery.semiResponsive.1.0.js"></script>
+		<script>
+			$('nav').semiResponsive();
+		</script>
+	</body>
+</html>
