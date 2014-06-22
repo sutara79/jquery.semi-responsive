@@ -1,6 +1,6 @@
 /**
  * @file jQuery Plugin: jquery.semiResponsive
- * @version 1.0
+ * @version 1.0.1
  * @author Yuusaku Miyazaki [toumin.m7@gmail.com]
  * @license MIT License
  */
@@ -13,9 +13,9 @@
  * @param {Object} [option] オプションを格納した連想配列
  * @param {string} [option.btn_class='semi_responsive'] - CSS切り替えボタンとして機能する要素のクラス名
  * @param {string} [option.btn_class_selected='semi_responsive_selected'] - 選択されている切り替えボタンのクラス名
- * @param {string} [option.link_href_attr='sr_link_href'] - CSSファイルのパスを格納する属性の名前
- * @param {string} [option.min_width_attr='sr_min_width'] - CSS切り替えの基準となる幅を格納する属性の名前
- * @param {string} [option.param_val_attr='sr_param_val'] - URLパラメータの値を格納する属性の名前
+ * @param {string} [option.link_href_attr='sr-link-href'] - CSSファイルのパスを格納する属性の名前
+ * @param {string} [option.min_width_attr='sr-min-width'] - CSS切り替えの基準となる幅を格納する属性の名前
+ * @param {string} [option.param_val_attr='sr-param-val'] - URLパラメータの値を格納する属性の名前
  * @param {string} [option.param_key='view'] - URLパラメータのキーの名前
  */
 $.fn.semiResponsive = function(option) {
@@ -50,23 +50,24 @@ function SemiResponsive(elem, option) {
 
 $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	/**
-	 * オプションを初期化する
+	 * @private
+	 * @desc オプションを初期化する
 	 */
 	_setOption: function() {
 		var id = $(this.elem).attr('id');
 		this.option =  $.extend({
 			btn_class: 'semi_responsive',
 			btn_class_selected: 'semi_responsive_selected',
-			link_href_attr: 'sr_link_href',
-			min_width_attr: 'sr_min_width',
-			param_val_attr: 'sr_param_val',
+			link_href_attr: 'sr-link-href',
+			min_width_attr: 'sr-min-width',
+			param_val_attr: 'sr-param-val',
 			param_key: 'view',
 		}, this.option);
 	},
 
 	/**
-	 * min_widthの大きい順に並べ替えて、インデックスを配列に格納する。
-	 * (AUTOの要素は除く)
+	 * @desc min_widthの大きい順に並べ替えて、インデックスを配列に格納する。(AUTOの要素は除く)
+	 * @private
 	 */
 	_sortChild: function() {
 		this.order_child = [];
@@ -86,7 +87,8 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	},
 
 	/**
-	 * URL文字列からGETパラメータを識別する
+	 * @private
+	 * @desc URL文字列からGETパラメータを識別する
 	 */
 	_setParsed: function() {
 		var parsed = {
@@ -108,7 +110,8 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	},
 
 	/**
-	 * URLのGETパラメータに応じてCSSを変更する
+	 * @private
+	 * @desc URLのGETパラメータに応じてCSSを変更する
 	 */
 	_setCssDependOnUrlParam: function() {
 		if (this.parsed.param[this.option.param_key] == undefined) {
@@ -136,7 +139,8 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	},
 
 	/**
-	 * 適用するCSSファイルを変更する
+	 * @private
+	 * @desc 適用するCSSファイルを変更する
 	 * @param {string} selected - 選択された要素の param_val_attr の値
 	 */
 	_setCss: function(selected) {
@@ -167,7 +171,8 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	},
 
 	/**
-	 * CSSを選ぶアンカーのイベントハンドラ
+	 * @private
+	 * @desc CSSを選ぶアンカーのイベントハンドラ
 	 */
 	_ehAnchor: function() {
 		var self = this;
@@ -205,7 +210,8 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	},
 
 	/**
-	 * ウィンドウサイズが変わった場合の処理
+	 * @private
+	 * @desc ウィンドウサイズが変わった場合の処理
 	 */
 	_ehResize: function() {
 		var self = this;
