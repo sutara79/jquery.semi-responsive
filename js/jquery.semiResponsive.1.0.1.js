@@ -66,8 +66,8 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	},
 
 	/**
-	 * @desc min_widthの大きい順に並べ替えて、インデックスを配列に格納する。(AUTOの要素は除く)
 	 * @private
+	 * @desc min_widthの大きい順に並べ替えて、インデックスを配列に格納する。(AUTOの要素は除く)
 	 */
 	_sortChild: function() {
 		this.order_child = [];
@@ -124,7 +124,8 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	},
 
 	/**
-	 * 画面の幅に応じてCSSを変更する
+	 * @private
+	 * @desc 画面の幅に応じてCSSを変更する
 	 */
 	_setCssDependOnWidth: function() {
 		this._sortChild();
@@ -153,7 +154,8 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	},
 
 	/**
-	 * 切り替えの引き金となる要素のCSSを変更
+	 * @private
+	 * @desc 切り替えの引き金となる要素のCSSを変更
 	 * @param {string} selected - 選択された要素の param_val_attr の値
 	 */
 	_changeSelectedCSS: function(selected) {
