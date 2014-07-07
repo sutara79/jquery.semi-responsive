@@ -130,7 +130,7 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	_setCssDependOnWidth: function() {
 		this._sortChild();
 		for (var i = 0; i < this.order_child.length; i++) {
-			if(window.matchMedia( '(min-width: ' + this.order_child[i].min_width +'px)' ).matches) {
+			if (window.matchMedia( '(min-width: ' + this.order_child[i].min_width +'px)' ).matches) {
 				this._setCss(
 					$(this.elem).find('.' + this.option.btn_class).eq(this.order_child[i].idx).attr(this.option.param_val_attr)
 				);

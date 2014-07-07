@@ -52,5 +52,11 @@ It is not necessary to set these attributes if you create a "AUTO" button.
 Please read JSDoc.  
 http://www.usamimi.info/~sutara/sample2/semiResponsive/JSDoc/global.html#semiResponsive
 
+## Author
+Yuusaku Miyazaki (宮崎 雄策)
+
+- Mail: toumin.m7@gmail.com
+- [Blog](http://sutara79.hatenablog.com/entry/2014/06/19/202521)
+
 ## License
 [MIT License](http://www.opensource.org/licenses/mit-license.php)
