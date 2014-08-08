@@ -21,7 +21,7 @@ http://www.usamimi.info/~sutara/sample2/semiResponsive/JSDoc/
 </nav>
 
 <script src="http://code.jquery.com/jquery.min.js"></script>
-<script src="js/jquery.semiResponsive.1.0.js"></script>
+<script src="js/jquery.semiResponsive.1.0.2.js"></script>
 <script>
 	$('nav').semiResponsive();
 </script>

@@ -1,6 +1,6 @@
 /**
  * @file jQuery Plugin: jquery.semiResponsive
- * @version 1.0.1
+ * @version 1.0.2
  * @author Yuusaku Miyazaki [toumin.m7@gmail.com]
  * @license MIT License
  */
@@ -40,12 +40,12 @@ function SemiResponsive(elem, option) {
 	this.elem = elem;
 	this.option = option;
 
-	this._setOption();
-	this._sortChild();
-	this._setParsed();
-	this._setCssDependOnUrlParam();
-	this._ehAnchor();
-	this._ehResize();
+	this.setOption();
+	this.sortChild();
+	this.setParsed();
+	this.setCssDependOnUrlParam();
+	this.ehAnchor();
+	this.ehResize();
 }
 
 $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
@@ -53,7 +53,7 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	 * @private
 	 * @desc オプションを初期化する
 	 */
-	_setOption: function() {
+	setOption: function() {
 		var id = $(this.elem).attr('id');
 		this.option =  $.extend({
 			btn_class: 'semi_responsive',
@@ -69,7 +69,7 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	 * @private
 	 * @desc min_widthの大きい順に並べ替えて、インデックスを配列に格納する。(AUTOの要素は除く)
 	 */
-	_sortChild: function() {
+	sortChild: function() {
 		this.order_child = [];
 		var self = this;
 		$(self.elem).find('.' + self.option.btn_class).each(function(idx) {
@@ -90,7 +90,7 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	 * @private
 	 * @desc URL文字列からGETパラメータを識別する
 	 */
-	_setParsed: function() {
+	setParsed: function() {
 		var parsed = {
 			not_param: '',
 			param: {},
@@ -113,13 +113,13 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	 * @private
 	 * @desc URLのGETパラメータに応じてCSSを変更する
 	 */
-	_setCssDependOnUrlParam: function() {
+	setCssDependOnUrlParam: function() {
 		if (this.parsed.param[this.option.param_key] == undefined) {
-			this._setCssDependOnWidth();
-			this._changeSelectedCSS(null);
+			this.setCssDependOnWidth();
+			this.changeSelectedCSS(null);
 		} else {
-			this._setCss(this.parsed.param[this.option.param_key]);
-			this._changeSelectedCSS(this.parsed.param[this.option.param_key]);
+			this.setCss(this.parsed.param[this.option.param_key]);
+			this.changeSelectedCSS(this.parsed.param[this.option.param_key]);
 		}
 	},
 
@@ -127,11 +127,11 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	 * @private
 	 * @desc 画面の幅に応じてCSSを変更する
 	 */
-	_setCssDependOnWidth: function() {
-		this._sortChild();
+	setCssDependOnWidth: function() {
+		this.sortChild();
 		for (var i = 0; i < this.order_child.length; i++) {
 			if (window.matchMedia( '(min-width: ' + this.order_child[i].min_width +'px)' ).matches) {
-				this._setCss(
+				this.setCss(
 					$(this.elem).find('.' + this.option.btn_class).eq(this.order_child[i].idx).attr(this.option.param_val_attr)
 				);
 				break;
@@ -144,7 +144,7 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	 * @desc 適用するCSSファイルを変更する
 	 * @param {string} selected - 選択された要素の param_val_attr の値
 	 */
-	_setCss: function(selected) {
+	setCss: function(selected) {
 		var self = this;
 		$(this.elem).find('.' + this.option.btn_class).each(function() {
 			$('head link[href="' + $(this).attr(self.option.link_href_attr) +'"]').remove();
@@ -158,7 +158,7 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	 * @desc 切り替えの引き金となる要素のCSSを変更
 	 * @param {string} selected - 選択された要素の param_val_attr の値
 	 */
-	_changeSelectedCSS: function(selected) {
+	changeSelectedCSS: function(selected) {
 		$(this.elem).find('.' + this.option.btn_class).removeClass(this.option.btn_class_selected);
 		if (!selected) {
 			var self = this;
@@ -176,7 +176,7 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	 * @private
 	 * @desc CSSを選ぶアンカーのイベントハンドラ
 	 */
-	_ehAnchor: function() {
+	ehAnchor: function() {
 		var self = this;
 		$(self.elem).find('.' + self.option.btn_class).on('click', function(e) {
 			// 適用中の項目がクリックされたら、ここで終了する
@@ -207,7 +207,7 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 			}
 
 			// 適用するCSSファイルを変更
-			self._setCssDependOnUrlParam();
+			self.setCssDependOnUrlParam();
 		});
 	},
 
@@ -215,12 +215,12 @@ $.extend(SemiResponsive.prototype, /** @lends SemiResponsive.prototype */ {
 	 * @private
 	 * @desc ウィンドウサイズが変わった場合の処理
 	 */
-	_ehResize: function() {
+	ehResize: function() {
 		var self = this;
 		$(window).on('resize', function() {
 			// AUTOのみ、レスポンシブとなる
 			if (self.parsed.param[self.option.param_key] == undefined) {
-				self._setCssDependOnWidth();
+				self.setCssDependOnWidth();
 			}
 		});
 	},

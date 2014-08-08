@@ -1,0 +1,27 @@
+{
+	"name": "semiResponsive",
+	"title": "jquery.semiResponsive", 
+	"description": "jQuery plugin for changing css file automatically or manually.",
+	"version": "1.0.2",
+	"keywords": [
+		"responsive",
+		"css"
+	],
+	"author": {
+		"name": "Yuusaku Miyazaki",
+		"email": "toumin.m7@gmail.com",
+		"url": "https://github.com/SutaraLumpur"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://opensource.org/licenses/MIT"
+		}
+	],
+	"dependencies": {
+		"jquery": ">=1.9"
+	},
+	"demo": "http://www.usamimi.info/~sutara/sample2/semiResponsive/",
+	"docs": "http://www.usamimi.info/~sutara/sample2/semiResponsive/JSDoc",
+	"bugs": "https://github.com/SutaraLumpur/jquery.semiResponsive/issues"
+}
