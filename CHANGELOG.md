@@ -1,4 +1,8 @@
-# Change Log for jquery.semiResponsive
+# Change Log for jquery.semi-responsive
+
+### 1.0.3 (2014-08-08)
+- Plugin name was changed.  
+  (プラグイン名を変更しました。)
 
 ### 1.0.2 (2014-08-08)
 - Internal method name was changed.  

@@ -1,12 +1,12 @@
-# jquery.semiResponsive
+# jquery.semi-responsive
 jQuery plugin for changing css file automatically or manually.
 
 
 ## Demo
-http://www.usamimi.info/~sutara/sample2/semiResponsive/
+http://www.usamimi.info/~sutara/sample2/semi-responsive/
 
 ## JSDoc
-http://www.usamimi.info/~sutara/sample2/semiResponsive/JSDoc/
+http://www.usamimi.info/~sutara/sample2/semi-responsive/jsdoc/
 
 
 ## Usage
@@ -21,7 +21,7 @@ http://www.usamimi.info/~sutara/sample2/semiResponsive/JSDoc/
 </nav>
 
 <script src="http://code.jquery.com/jquery.min.js"></script>
-<script src="js/jquery.semiResponsive.1.0.2.js"></script>
+<script src="js/jquery.semi-responsive.1.0.3.js"></script>
 <script>
 	$('nav').semiResponsive();
 </script>
@@ -50,7 +50,7 @@ It is not necessary to set these attributes if you create a "AUTO" button.
 
 ### Options
 Please read JSDoc.  
-http://www.usamimi.info/~sutara/sample2/semiResponsive/JSDoc/global.html#semiResponsive
+http://www.usamimi.info/~sutara/sample2/semi-responsive/jsdoc/global.html#semiResponsive
 
 ## Author
 Yuusaku Miyazaki (宮崎 雄策)
