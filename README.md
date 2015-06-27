@@ -1,13 +1,8 @@
 # jquery.semi-responsive
 jQuery plugin for changing css file automatically or manually.
 
-
 ## Demo
 http://www.usamimi.info/~sutara/sample2/semi-responsive/
-
-## JSDoc
-http://www.usamimi.info/~sutara/sample2/semi-responsive/jsdoc/
-
 
 ## Usage
 
@@ -47,10 +42,6 @@ It is not necessary to set these attributes if you create a "AUTO" button.
 <a href="javascript:void(0)" class="semi_responsive" sr-link-href="css/sp.css" sr-param-val="sp" sr-min-width="0">Smart Phone</a>
 <a href="javascript:void(0)" class="semi_responsive">AUTO</a>
 ```
-
-### Options
-Please read JSDoc.  
-http://www.usamimi.info/~sutara/sample2/semi-responsive/jsdoc/global.html#semiResponsive
 
 ## Author
 Yuusaku Miyazaki (宮崎 雄策)
